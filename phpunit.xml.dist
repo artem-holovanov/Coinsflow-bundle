@@ -2,7 +2,6 @@
 <phpunit bootstrap="vendor/autoload.php"
          colors="true"
          stopOnFailure="false"
-         strictCoverage="true"
          failOnWarning="true"
          failOnRisky="true"
          testdox="true">

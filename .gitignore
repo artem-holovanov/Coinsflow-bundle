@@ -3,3 +3,4 @@
 composer.lock
 symfony.lock
 /vendor/
+.phpunit.result.cache
