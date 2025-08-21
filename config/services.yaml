@@ -1,4 +1,4 @@
 services:
   CommonBundle\:
-    resource: '../*'
+    resource: '../src/*'
     exclude: '../{DependencyInjection,Entity,Tests,Resources}'
