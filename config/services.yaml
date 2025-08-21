@@ -2,3 +2,10 @@ services:
   CommonBundle\:
     resource: '../src/*'
     exclude: '../src/{DependencyInjection,Entity,Tests,Resources}'
+
+  CommonBundle\Repository\:
+    resource: '../Repository'
+    public: true
+    autowire: true
+    arguments:
+      $registry: '@doctrine'
