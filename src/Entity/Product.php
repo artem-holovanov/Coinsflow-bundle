@@ -13,9 +13,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 abstract class Product
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\GeneratedValue(strategy: 'NONE')]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
-    #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
     protected ?Uuid $id = null;
 
     #[Assert\Type('string')]
@@ -39,6 +38,12 @@ abstract class Product
     #[Assert\NotNull]
     #[ORM\Column(type: Types::INTEGER)]
     protected ?int $quantity = null;
+
+    public function setId(Uuid $id): static
+    {
+        $this->id = $id;
+        return $this;
+    }
 
     public function getId(): ?Uuid
     {
